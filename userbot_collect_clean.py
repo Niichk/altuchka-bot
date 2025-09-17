@@ -41,7 +41,7 @@ PER_CHAT_SCAN_LIMIT = 500
 
 # >>> КОММЕНТАРИИ <<<
 ENABLE_AUTO_COMMENTS = True
-COMMENT_EVERY_N = 2
+COMMENT_EVERY_N = 6
 CHANNEL_POLL_SECONDS = 10   # как часто сканировать канал на новые посты
 
 # ====== Gemini ======
