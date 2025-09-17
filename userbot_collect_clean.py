@@ -22,6 +22,8 @@ load_dotenv()
 API_ID = int(os.getenv("API_ID"))
 API_HASH = os.getenv("API_HASH")
 SESSION_NAME = os.getenv("SESSION_NAME", "userbot_session")
+WORKDIR = os.getenv("WORKDIR", ".")
+SESSION_STRING = os.getenv("SESSION_STRING")
 
 # >>> ИСТОЧНИКИ И ЦЕЛЬ <<<
 SOURCE_CHATS = [
@@ -112,7 +114,13 @@ def set_meta(key: str, value: str):
         conn.commit()
 
 # ====== клиент userbot ======
-app = Client(SESSION_NAME, api_id=API_ID, api_hash=API_HASH, workdir=".")
+app = Client(
+    name=SESSION_NAME,          # в Pyrogram v2 это параметр "name"
+    api_id=API_ID,
+    api_hash=API_HASH,
+    workdir=WORKDIR,
+    session_string=SESSION_STRING   # ← ключевая строка, отключает интерактивный вход
+)
 
 async def send_with_retry(func, *args, **kwargs):
     while True:
