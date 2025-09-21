@@ -36,7 +36,7 @@ EFFECTIVE_SOURCE_CHATS = [c for c in SOURCE_CHATS if c != TARGET_CHAT_ID]
 
 # >>> ЧАСТОТА <<<
 ENABLE_LIVE_STREAM = True
-POST_EVERY_SECONDS = 40 * 60
+POST_EVERY_SECONDS = 80 * 60
 PER_CHAT_SCAN_LIMIT = 500
 
 # >>> КОММЕНТАРИИ <<<
